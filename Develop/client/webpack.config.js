@@ -22,6 +22,24 @@ module.exports = () => {
         template: './index.html',
         title: 'J.A.T.E'
       }),
+      new WebpackPwaManifest({
+        fingerprings: false,
+        inject: true,
+        name: 'J.A.T.E',
+        short_name: 'J.A.T.E',
+        description: 'Write with J.A.T.E!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
 
     module: {
